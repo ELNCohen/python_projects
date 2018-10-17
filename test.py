@@ -9,9 +9,4 @@ df = pd.DataFrame([[1,2,3],[1,2,3],[3,2,1]],columns=['a','b','c'])
 
 print(df)
 
-
-print(dfsdmksdm)
-
 df.a.hist()
-
-print('hi this is a test')
