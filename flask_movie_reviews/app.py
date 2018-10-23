@@ -8,6 +8,9 @@ import numpy as np
 # Import HashingVector from local dir
 from vectorizer import vect
 
+# Import update function
+from update import update_model
+
 app = Flask(__name__)
 
 # Classifier ######################
@@ -69,3 +72,6 @@ def feedback():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+if __name__ == '__main__':
+    clf = update_model(db_path=db, model=clf, batch_size=10000)
