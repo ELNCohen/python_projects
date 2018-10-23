@@ -31,4 +31,4 @@ def update_model(db_path, model, batch_size=10000):
 clf = pickle.load(open('./pkl_objects/classifier.pkl', 'rb'))
 db = os.path.join('review.sqlite')
 clf = update_model(db_path=db, model=clf, batch_size=10000)
-pickle.dump(clf, open(os.path.join('pkl_objects', 'classifier.pk'), 'wb'), protocol=4)
+pickle.dump(clf, open(os.path.join('pkl_objects', 'classifier.pkl'), 'wb'), protocol=4)
