@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+  {% include '_navbar.html' %}
+{% endblock %}
+
+{% block sub_content %}
+<form class="form-group" method="POST">
+  <label for="title">Title:</label>
+  <input type="text" class="form-control" name="title"/>
+  <hr>
+  <label for="blog_post">Blog Post:</label>
+  <textarea class="form-control" rows="15" name="blog_post"/></textarea>
+  <hr>
+  <button class="btn btn-primary btn-md" type="submit">Submit Post</button>
+</form>
+{% endblock %}

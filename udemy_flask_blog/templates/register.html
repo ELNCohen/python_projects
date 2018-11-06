@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+  {% include '_navbar.html' %}
+{% endblock %}
+
+{% block sub_content %}
+<form class="form-inline" method="post">
+  Username: <input type="text" name="username"placeholder="Username"/>
+  Enter Password: <input type="password" name="password" placeholder="Enter Password"/>
+  Confirm Password: <input type="password" name="confirm_password" placeholder="Confirm Password"/>
+  <input type="submit"/>
+</form>
+{% endblock %}

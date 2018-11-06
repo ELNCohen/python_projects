@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+  {% include '_navbar.html' %}
+{% endblock %}
+
+{% block sub_content %}
+  <form method='POST'>
+    Name:<input type='text' name='name' />
+    Age:<input type='text' name='age' />
+    <input type='submit' />
+  <h1> {{session['username']}} </h1>
+{% endblock %}

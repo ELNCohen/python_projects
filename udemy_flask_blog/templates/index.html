@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+  {% include '_navbar.html' %}
+{% endblock %}
+
+{% block sub_content %}
+{% if blog_posts == None %}
+  <h1>No Posts Have Been Made!</h1>
+{% else %}
+<form class="form-group" method="POST">
+  <table border = 1 class="table table-hover">
+    <tr>
+      <th>Username</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Date Updated</th>
+      <th>Edit Post</th>
+      <th>Delete Post</th>
+    </tr>
+    {% for post in blog_posts %}
+    <tr>
+      <td>{{post['username']}}</td>
+      <td>{{post['title']}}</td>
+      <td>{{post['text']}}</td>
+      <td>{{post['ts']}}</td>
+      {% if session.username == post.username %}
+      <td><a href="/edit-post/{{post['blog_id']}}" class="btn btn-primary" name="button" value="edit">Edit</a></td>
+      <td> <a href="/delete-post/{{post['blog_id']}}" class="btn btn-danger" name="button" value="delete">Delete</a></td>
+      {% else %}
+      <td> </td>
+      <td> </td>
+      {% endif %}
+    {% endfor %}
+  </table>
+</form>
+{% endif %}
+{% endblock %}
